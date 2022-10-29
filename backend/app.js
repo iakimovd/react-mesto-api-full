@@ -20,7 +20,6 @@ app.use(
       'https://iakimovd.project.mesto.nomoredomains.icu',
       'http://iakimovd.project.mesto.nomoredomains.icu',
     ],
-    credentials: true,
     methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE'],
     allowedHeaders: ['Authorization', 'Content-type', 'Accept'],
   }),
