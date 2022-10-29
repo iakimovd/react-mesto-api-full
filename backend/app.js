@@ -14,10 +14,17 @@ const { PORT = 4000 } = process.env;
 
 const app = express();
 
-app.use(cors());
-// app.use(cors({
-//   origin: 'https://iakimovd.project.mesto.nomoredomains.icu',
-// }));
+app.use(
+  cors({
+    origin: [
+      'https://iakimovd.project.mesto.nomoredomains.icu',
+      'http://iakimovd.project.mesto.nomoredomains.icu',
+    ],
+    credentials: true,
+    methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE'],
+    allowedHeaders: ['Authorization', 'Content-type', 'Accept'],
+  }),
+);
 
 // app.use(cors({
 //   origin: 'http://localhost:3000',
