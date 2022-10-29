@@ -15,13 +15,11 @@ const app = express();
 
 app.use(cors({
   origin: ['https://iakimovd.project.mesto.nomoredomains.icu', 'http://iakimovd.project.mesto.nomoredomains.icu'],
-  credentials: true,
 }));
 
-// app.use(cors({
-//   origin: 'http://localhost:3000',
-//   credentials: true,
-// }));
+app.use(cors({
+  origin: 'http://localhost:3000',
+}));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
