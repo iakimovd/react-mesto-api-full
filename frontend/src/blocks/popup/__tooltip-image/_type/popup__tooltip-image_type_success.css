@@ -1,0 +1,6 @@
+.popup__tooltip-image_type_success {
+  margin: 60px auto 32px;
+  width: 120px;
+  height: 120px;
+  background-image: url(../../../../images/auth-success.svg);
+}

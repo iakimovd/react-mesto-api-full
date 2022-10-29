@@ -1,0 +1,12 @@
+.popup__tooltip-image_type_failure {
+  margin: 60px auto 32px;
+  width: 120px;
+  height: 120px;
+  background-image: url(../../../../images/auth-failure.svg);
+}
+
+@media screen and (max-width: 600px) {
+  .popup__tooltip-image_type_failure {
+    margin: 50px auto 40px;
+  }
+}
