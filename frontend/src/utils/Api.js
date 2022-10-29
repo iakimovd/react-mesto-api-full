@@ -13,7 +13,7 @@ export class Api {
       return headers;
     }
     return {
-      ...headers, 'Authorization': `Bearer ${this._getToken()}`,
+      ...this._headers, 'Authorization': `Bearer ${this._getToken()}`,
     }
   }
 

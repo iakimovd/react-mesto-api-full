@@ -182,7 +182,6 @@ function App() {
   const onRegister = ({ email, password }) => {
     return auth.register({ email, password })
       .then(() => {
-        setLoggedIn(true);
         setIsInfoTooltipPopupOpen(true);
         setIsSuccess(true);
         history.push("/sign-in");
