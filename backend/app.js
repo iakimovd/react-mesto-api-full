@@ -14,9 +14,10 @@ const { PORT = 4000 } = process.env;
 
 const app = express();
 
-app.use(cors({
-  origin: 'https://iakimovd.project.mesto.nomoredomains.icu',
-}));
+app.use(cors());
+// app.use(cors({
+//   origin: 'https://iakimovd.project.mesto.nomoredomains.icu',
+// }));
 
 // app.use(cors({
 //   origin: 'http://localhost:3000',
