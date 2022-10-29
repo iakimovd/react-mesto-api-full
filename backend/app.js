@@ -14,7 +14,7 @@ const { PORT = 4000 } = process.env;
 const app = express();
 
 app.use(cors({
-  origin: ['https://iakimovd.project.mesto.nomoredomains.icu', 'http://iakimovd.project.mesto.nomoredomains.icu'],
+  origin: 'https://iakimovd.project.mesto.nomoredomains.icu',
 }));
 
 // app.use(cors({
