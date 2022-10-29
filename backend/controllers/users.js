@@ -9,6 +9,8 @@ const BadRequest = require('../errors/BadRequest'); // 400
 // const Forbidden = require('../errors/Forbidden'); // 403
 const Conflict = require('../errors/Conflict'); // 409
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 module.exports.getUsers = (req, res, next) => {
   User.find({})
     .then((users) => res.send(users))
@@ -46,7 +48,7 @@ module.exports.login = (req, res, next) => {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        'secret-key',
+        NODE_ENV === 'production' ? JWT_SECRET : 'secret-key',
         { expiresIn: '7d' }, // токен будет просрочен через час после создания
       );
       // аутентификация успешна
