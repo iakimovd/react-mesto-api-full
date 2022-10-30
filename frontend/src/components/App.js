@@ -155,12 +155,13 @@ function App() {
     const jwt = localStorage.getItem('jwt');
     if (!jwt) {
       return;
+      // history.push("/sign-in");
     }
     auth.checkToken(jwt)
       .then((res) => {
         setEmail(res.email);
         setLoggedIn(true);
-        history.push("/")
+        history.push("/");
       })
       .catch(console.dir)
   }, [history]);
