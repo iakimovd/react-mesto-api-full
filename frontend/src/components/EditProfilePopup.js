@@ -56,7 +56,7 @@ export function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
             placeholder="Имя"
             required
             // @ts-ignore
-            minLength="7"
+            minLength="2"
             // @ts-ignore
             maxLength="40"
             value={name || ''}
@@ -73,7 +73,7 @@ export function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
             placeholder="Профессия"
             required
             // @ts-ignore
-            minLength="7"
+            minLength="2"
             // @ts-ignore
             maxLength="200"
             value={description || ''}
