@@ -23,7 +23,7 @@ export function Header({ onLogout, email }) {
           </Route>
 
           <Route exact path="/">
-            <Link className="header__logout-link" to="/sign-up" onClick={onLogout}>Выйти</Link>
+            <Link className="header__logout-link" to="/sign-in" onClick={onLogout}>Выйти</Link>
           </Route>
 
           <Route path="/sign-in">
