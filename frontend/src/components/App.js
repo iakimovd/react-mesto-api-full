@@ -33,7 +33,7 @@ function App() {
   const history = useHistory();
   const [email, setEmail] = useState('');
 
-  console.log(process.env.NODE_ENV);
+  // console.log(process.env.NODE_ENV);
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -155,7 +155,6 @@ function App() {
     const jwt = localStorage.getItem('jwt');
     if (!jwt) {
       return;
-      // history.push("/sign-in");
     }
     auth.checkToken(jwt)
       .then((res) => {
