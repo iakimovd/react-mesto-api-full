@@ -33,6 +33,8 @@ function App() {
   const history = useHistory();
   const [email, setEmail] = useState('');
 
+  console.log(process.env.NODE_ENV);
+
   useEffect(() => {
     if (isLoggedIn) {
       api.getInitialCards()

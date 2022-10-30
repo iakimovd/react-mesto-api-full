@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { celebrate, Joi, errors } = require('celebrate');
+// const corsMiddleware = require('./middlewares/cors');
 const cors = require('cors');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
@@ -14,16 +15,25 @@ const { PORT = 4000 } = process.env;
 
 const app = express();
 
-app.use(
-  cors({
-    origin: [
-      'https://iakimovd.project.mesto.nomoredomains.icu',
-      'http://iakimovd.project.mesto.nomoredomains.icu',
-    ],
-    methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE'],
-    allowedHeaders: ['Authorization', 'Content-type', 'Accept'],
-  }),
-);
+// const allowedCors = [
+//   'https://iakimovd.project.mesto.nomoredomains.icu',
+//   'http://iakimovd.project.mesto.nomoredomains.icu',
+//   'http://localhost:4000',
+//   'https://localhost:4000',
+// ];
+
+// app.use(corsMiddleware);
+
+// app.use(
+//   cors({
+//     origin: [
+//       'https://iakimovd.project.mesto.nomoredomains.icu',
+//       'http://iakimovd.project.mesto.nomoredomains.icu',
+//     ],
+//     methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE'],
+//     allowedHeaders: ['Authorization', 'Content-type', 'Accept'],
+//   }),
+// );
 
 // app.use(cors({
 //   origin: 'http://localhost:3000',
@@ -39,6 +49,8 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 });
 
 app.use(requestLogger); // подключаем логгер запросов
+
+app.use(cors());
 
 app.get('/crash-test', () => {
   setTimeout(() => {
